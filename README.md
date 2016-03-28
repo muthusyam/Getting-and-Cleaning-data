@@ -1,25 +1,25 @@
-# Getting and Cleaning Data Project
+# Getting and Cleaning Data: Course Project
+### Introduction
 
- by Muthumari Nammalwar
+This repository contains my work for the course project for the Coursera course "Getting and Cleaning data", part of the Data Science specialization. What follows first are my notes on the original data.
 
-Repo for the submission of the course project for the Johns Hopkins Getting and Cleaning Data course.
+### About the raw data
 
-### Overview
+The features (561 of them) are unlabeled and can be found in the x_test.txt. The activity labels are in the y_test.txt file. The test subjects are in the subject_test.txt file.
 
-This project serves to demonstrate the collection and cleaning of a tidy data set that can be used for subsequent analysis. A full description of the data used in this project can be found at The UCI Machine Learning Repository
+The same holds for the training set.
 
-The source data for this project can be found here.
+### About the script and the tidy dataset
 
-### Making Modifications to This Script
+I created a script called run_analysis.R which will merge the test and training sets together. Prerequisites for this script:
 
-Once you have obtained and unzipped the source files, you will need to make one modification to the R file before you can process the data. Note that on line 26 of run_analysis.R, you will set the path of the working directory to relect the location of the source files in your own directory.
+* UCI HAR Dataset must be extracted
+* UCI HAR Dataset must be availble in a directory called "UCI HAR Dataset"
 
-### Project Summary
+After merging testing and training, labels are added and only columns that have to do with mean and standard deviation are kept.
 
-The following is a summary description of the project instructions
+Lastly, the script will create a tidy data set containing the means of all the columns per test subject and per activity. This tidy dataset will be written to a tab-delimited file called tidy.txt, which can also be found in this repository.
 
-You should create one R script called run_analysis.R that does the following. 1. Merges the training and the test sets to create one data set. 2. Extracts only the measurements on the mean and standard deviation for each measurement. 3. Uses descriptive activity names to name the activities in the data set 4. Appropriately labels the data set with descriptive activity names. 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+### About the Code Book
 
-### Additional Information
-
-You can find additional information about the variables, data and transformations in the CodeBook.MD file.
+The CodeBook.md file explains the transformations performed and the resulting data and variables.
